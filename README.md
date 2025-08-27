@@ -1,9 +1,4 @@
-Here's a detailed and professional `README.md` for your Flask-based web app **JobBoard** — a mini-Indeed style application for job postings and applications with resume uploads:
-
----
-
-```markdown
-# 📄 JobBoard
+📄 JobBoard
 
 JobBoard is a lightweight Flask web application that allows users to **post jobs**, **browse listings**, and **apply with a resume or file upload** — similar to a simplified version of platforms like **Indeed**. It is designed to be easy to set up, user-friendly, and extendable for custom job board needs.
 
@@ -153,7 +148,7 @@ Contributions are welcome!
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. 
 
 ---
 
@@ -168,11 +163,3 @@ For questions or feedback:
 
 ---
 
-Let me know if you want to:
-
-- Include screenshots or UI mockups
-- Add deployment instructions (Heroku, Docker, etc.)
-- Include badges (build status, license, etc.)
-
-I can help generate those too.
-```
