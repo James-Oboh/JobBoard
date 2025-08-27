@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Job Listings</h2>
+    <form method="GET" action="{{ url_for('jobs.index') }}" class="job-search-form">
+        <div class="form-group">
+            <input type="text" name="q" placeholder="Keywords (e.g., Python, Marketing)" value="{{ request.args.get('q', '') }}">
+        </div>
+        <div class="form-group">
+            <input type="text" name="location" placeholder="Location" value="{{ request.args.get('location', '') }}">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    {% for job in jobs %}
+    <div class="card job-listing">
+        <h3><a href="{{ url_for('jobs.job_details', job_id=job.id) }}"><i class="fas fa-suitcase"></i> {{ job.title }} at {{ job.company }}</a></h3>
+        <p><i class="fas fa-map-marker-alt"></i> Location: {{ job.location }}</p>
+        {% if job.salary %}
+            <p><i class="fas fa-dollar-sign"></i> Salary: {{ job.salary }}</p>
+        {% endif %}
+    </div>
+{% else %}
+    <p>No jobs found.</p>
+{% endfor %}
+{% endblock %}

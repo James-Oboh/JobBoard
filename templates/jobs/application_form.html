@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Apply for: {{ job.title }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.resume.label }}
+            {{ form.resume(class="form-control-file") }}
+            {% if form.resume.errors %}
+                <ul class="errors">
+                    {% for error in form.resume.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.cover_letter.label }}
+            {{ form.cover_letter(class="form-control", rows=10) }}
+        </div>
+        <div>
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+{% endblock %}
